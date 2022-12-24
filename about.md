@@ -3,12 +3,14 @@ title: About
 layout: page
 ---
 <!-- ![Profile Image]({% if site.external-image %}{{ site.picture }}{% else %}{{ site.url }}/{{ site.picture }}{% endif %}) -->
-
-<div class="text-center">
-    <img src="images/about-beanie.jpg" class="img-thumbnail" alt="profile pic of me in a beanie" style="max-width: 70%; max-height: auto; margin-bottom: 3rem;">
-</div> 
-
-<div class="text-center" style="line-height: 200%;">
+<div class="row" style="margin:3rem;">
+  <div class="col-sm-2 col-lg-4">
+  </div>
+  <div class="col-sm-10 col-lg-4">
+    <div class="text-center">
+      <img src="images/about-beanie.jpg" class="img-thumbnail" alt="profile pic of me in a beanie" style="max-width: 70%; max-height: auto; margin-bottom: 3rem;">
+    </div> 
+  <div class="text-center" style="line-height: 200%;">
       <p class="fs-4">
       Hi, I'm Kaylee. Welcome to my site.
       </p>
@@ -30,4 +32,8 @@ layout: page
       <p>
         Feel free to click around, or send me an email. 
       </p>
+  </div>
+  </div>
+  <div class="col-sm-2 col-lg-4">
+  </div>
   </div>
