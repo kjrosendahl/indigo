@@ -1,0 +1,99 @@
+---
+title: "Out of This World Research at IPAM"
+layout: post
+date: 2022-12-24 01:25
+tag: 
+- research
+- IPAM
+- Los Angeles
+image: ..\assets\images\projects\satellite-silhouette.png
+headerImage: true
+projects: true
+hidden: true 
+description: "My research at IPAM on pLEO satellites"
+category: project
+author: kjros
+externalLink: false
+---
+
+          <!-- <h3>
+            Research in Industrial Projects for Undergraduates (RIPS)
+          </h3>
+          <p class="fs-4 fw-light">
+            Los Angeles, CA 
+          </p>
+          <p class="fs-5 fw-light">
+            Summer 2022
+          </p> -->
+          
+<p>
+<a href="https://www.ipam.ucla.edu/programs/student-research-programs/research-in-industrial-projects-for-students-rips-2022/"
+    target="_blank">Research in Industrial Projects for Students</a> (RIPS) 
+    is an industrial research program held yearly by UCLA's Institute for Pure and Applied Mathematics (IPAM). Students from around the globe come 
+    and work on projects given by industry sponsors. 
+    My team's project, "<em>Distributed Kalman Filter Designs and Experiments for Proliferated Low Earth Orbit (pLEO) Satellite Constellations</em>,"
+    was sponsored by 
+    <a href="https://aerospace.org/" target="_blank">The Aerospace Corporation</a>, a research and development center located in El Segundo, CA.
+</p>
+<p>
+    My team focused on clock synchronization for pLEO constellations, a relatively new type of satellite system of interest to Aerospace. 
+    For this problem, we used Kalman filters and distributed Kalman filters, which are state estimation algorithms. 
+</p>
+
+
+<div class= "text-center">
+    <img src="../assets/images/projects/ipam.jpg" alt="my research team outside of IPAM" style="max-width:55%;">
+</div>
+
+<p>
+    We implemented three distributed algorithms in Python: the Naive filter, the Primitive Distributed Kalman Filter (PDKF), and the 
+    Decentralized Collaborative Localization (DCL) algorithm. 
+    We then ran various experiments with these filters. 
+</p>
+
+<p>  
+    I wrote the code for the Naive filter and PDFK, which ran each algorithm and displayed their results. 
+    Since the filters relied on helper classes, which kept track of a single satellite state, I also helped develop and debug
+    these classes.
+</p>
+
+<div class="text-center">
+    <img src="../assets/images/projects/wrapped-dcl.png" alt="dcl results on satellite uncertainties" style="max-width:75%;">
+</div>
+
+<p>  
+    After finishing the code for each filter, we then began experimentation. 
+    I tuned the Naive filter, which meant varying parameters such as clock noise and initial clock uncertainty. 
+    This, in combination with varying the number of satellites and planes in the constellation, showed tuning could lead to 
+    lower values of satellite bias uncertainties. 
+</p>
+
+<p>
+    From this, my team turned towards tuning the DCL algorithm. When we saw convergence of satellite uncertainties, 
+    we began to focus more on DCL, as it seemed to have the best performance out of all our filters. 
+</p>
+
+
+<div class="text-center">
+    <img src="../assets/images/projects/naive_beta_tuning_80hr.png" alt="naive filter beta tuning graph" style="max-width:75%">
+</div>
+
+<p>
+    Our other experiments with DCL included varying the constellation sizes, limiting communcation 
+    between planes, and changing the order of measurement updates. 
+</p>
+  
+<p>
+    At the end of the summer, we summarized our work and results to the Aerospace Corporation and IPAM, in both an outbrief and a final report.
+    For the presentation, I explained each filter and the parameters used in our initial experiments, and reviewed the initial results.
+    In the report, I further laid out the mathematics of each algorithm, and their implementation. 
+</p> 
+
+<p>
+    My team plans on presenting a poster on our work at the 
+    <a href="https://www.jointmathematicsmeetings.org//jmm" target="_blank"> Joint Mathematics Meeting</a> in 
+    Boston, January 2023. 
+    Additionally, I plan on attending the 
+    <a href = "https://math.unl.edu/ncuwm" target="_blank"> Nebraska Conference for Undergraduate Women in Mathematics</a>
+    in January to present our research. 
+</p>
