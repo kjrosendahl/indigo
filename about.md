@@ -2,7 +2,11 @@
 title: About
 layout: page
 ---
-![Profile Image]({% if site.external-image %}{{ site.picture }}{% else %}{{ site.url }}/{{ site.picture }}{% endif %})
+<!-- ![Profile Image]({% if site.external-image %}{{ site.picture }}{% else %}{{ site.url }}/{{ site.picture }}{% endif %}) -->
+
+<div class="text-center">
+    <img src="images/about-beanie.jpg" class="img-thumbnail" alt="profile pic of me in a beanie" style="max-width: 70%; max-height: auto; margin-bottom: 3rem;">
+</div> 
 
 <div class="text-center" style="line-height: 200%;">
       <p class="fs-4">
