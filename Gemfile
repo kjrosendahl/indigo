@@ -10,4 +10,6 @@ group :jekyll_plugins do
     gem "html-proofer"
 end
 
+gem 'faraday-retry'
+
 gem "webrick", "~> 1.7"
