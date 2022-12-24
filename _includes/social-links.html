@@ -31,6 +31,12 @@
         </a>
     {% endif %}
 
+    {% if site.spotify %}
+        <a class="link" data-title="spotify.com/{{ site.spotify }}" href="https://open.spotify.com/user/{{ site.spotify }}" target="_blank"  rel="noopener">
+            <i class="fa-brands fa-spotify"></i>
+        </a>
+    {% endif %}
+
     {% if site.email %}
         <a class="link" data-title="{{ site.email }}" href="mailto:{{ site.email }}"  rel="noopener">
             <i class="fa-regular fa-envelope"></i>
