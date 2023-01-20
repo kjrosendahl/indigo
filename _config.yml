@@ -3,7 +3,7 @@ title: Kaylee Rosendahl
 bio: "You can't ever reach perfection, but you can believe in an asymptote towards which you are ceaselessly striving | Paul Kalanithi" 
 
 # summary info
-description: A blog about technology and stuff related
+description: A blog about technology, math, and travel
 
 # if it's an external image, update below for true
 # better with square images
@@ -45,7 +45,7 @@ spotify: 7p6vtyrrt3dglpgyvc5gj2zpu?si=6172100f15de4477&nd=1
 authors:
   kjros:
     name: Kaylee Rosendahl
-    bio: A student looking to travel the world
+    bio: Searching for that asymptote
     external-image: false
     picture: assets/images/profile.jpg
     # twitter: johndoe
