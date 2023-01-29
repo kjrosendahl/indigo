@@ -1,0 +1,38 @@
+.container {
+    position: relative;
+    margin: 2rem;
+  }
+  
+  .image {
+    display: block;
+    width:100%;
+    height:auto;
+  }
+  
+  .overlay {
+    position: absolute;
+    top: 3rem;
+    bottom: 3rem;
+    left: 3rem;
+    right: 3rem;
+    height: auto;
+    opacity: 0;
+    transition: .5s ease;
+    background-color: rgba(15, 15, 15, 0.72);
+  }
+  
+  .container:hover .overlay {
+    opacity: .95;
+  }
+  
+  .text {
+    font-size: 2rem;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    padding: 2rem 2rem;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
