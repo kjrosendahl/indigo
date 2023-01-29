@@ -1,11 +1,35 @@
 ---
 title: "May 2020 - September 2021"
 layout: post
-image: ../assets/images/camera.jpg
+image: ../assets/images/camera.png
 headerImage: true
 potpourri: true
 description: "Snapshots of a STEM student: May 2020 - Sept 2021"
 author: kjros
---- 
+images: 
+- image_path: ../assets/images/gallery/mexico-playa-sunrise-sienna.jpg
+  txt: sunrise
+- image_path: ../assets/images/gallery/mexico-rock-hopping.jpg
+- image_path: ../assets/images/gallery/lakefront-trail-from-shedd.jpg
+- image_path: ../assets/images/gallery/madison-rainy-day-insta.jpg
+---
+<!-- images:
+    - image_path: ../assets/images/gallery/mexico-plyaya-sunrise-sienna.jpg
+    title: sunrise with pink skies on seaside
+    - image_path: ../assets/images/gallery/mexico-rock-hopping.jpg
+    title: blue skies and rocks on the ocean
+    - image_path: ../assets/images/gallery/lakefront-trail-from-shedd.jpg
+    title: lakefront trail over lake michigan
+    - image_path: ../assets/images/gallery/madison-rainy-day-insta.jpg
+    title: streetview of a skyscraper -->
 
-<p>hi!</p>
+
+<!-- <ul class="photo-gallery">
+    {% for image in page.images %}
+    <li><img src="{{ image.image_path }}" alt="{{ image.title}}" /></li>
+    {% endfor %}
+</ul> 
+<p>hi</p> -->
+{% for image in page.images %}
+    <img src="{{ image.image_path }}" alt="{{ image.txt }}"/>
+{% endfor %} 
