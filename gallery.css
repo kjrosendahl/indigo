@@ -26,11 +26,11 @@
   }
   
   .text {
-    font-size: 2rem;
+    font-size: 1em;
     position: relative;
     top: 50%;
     left: 50%;
-    padding: 2rem 2rem;
+    padding: 2em 2em;
     -webkit-transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
