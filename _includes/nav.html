@@ -37,6 +37,12 @@
                 </li>
             {% endif %}
         {% endif %}
+        
+        {% if page.title != "Potpourri" %}
+            <li class="item">
+                <a class="link" href="{{ site.url }}/potpourri">Potpourri</a>
+            </li>
+        {% endif %}
 
         {% if site.resume == true %}
             <li class="item">

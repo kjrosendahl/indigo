@@ -1,0 +1,28 @@
+---
+layout: page
+title: Potpourri
+---
+
+<div class="text-center">
+    <p>
+        In my free time, I read, play video games, and cook. Unfortunately, those activities aren't very picturesque.
+        Luckily, I also love trying new food, traveling, and exploring cities!
+    </p>
+
+    <p>
+        Here is a personal collection of my favorite adventures. Catch the best restaurants in Chi, 
+        gorgeous views of NYC, and my summer in California!
+    </p>
+</div>
+
+<section class="list">
+    {% for post in site.posts %}
+        {% if post.potpourri %}
+            <div class="item {% if post.star %}star{% endif %}">
+                <a class="url" href="{% if post.externalLink %}{{ post.externalLink }}{% else %}{{ site.url }}{{ post.url }}{% endif %}">
+                    <h3 class="title">{{ post.title }}</h3>
+                </a>
+            </div>
+        {% endif %}
+    {% endfor %}
+</section>
