@@ -1,0 +1,120 @@
+--- 
+title: "August 2022 - November 2022"
+layout: post 
+image: ../assets/images/camera.png 
+headerImage: true 
+potpourri: true 
+category: potpourri 
+description: "Snapshots of a STEM student: August 2022 - November 2022"
+author: kjros 
+images: 
+- image_path: ../assets/images/gallery/la-creperie-croque-madame.jpg 
+  alt: fries and ham and egg sandwich 
+  name: La Crêperie 
+  loc: Lincoln Park 
+  date: November 19, 2022 
+  desc: My favorite French restaurant in Chi. My classic order? A croque madame! 
+- image_path: ../assets/images/gallery/hot-choco-machine-dining.jpg 
+  alt: skillet of pork and eggs 
+  name: Machine Engineered Dining and Drink 
+  loc: Wicker Park 
+  date: November 5, 2022
+  desc: Brunch after a race! Glazed pork with kimchi and fried eggs 
+- image_path: ../assets/images/gallery/hot-choco-bear-art.jpeg 
+  alt: street art of yellow bear eating pizza
+  name: Pizza Bear, I proclaim 
+  loc: Wicker Park 
+  date: November 5, 2022
+- image_path: ../assets/images/gallery/chi-river-on-bridge-10-22.jpg 
+  alt: blue and green chi river and skyscrapers 
+  name: Chicago River 
+  loc: River North, Chicago 
+  date: October 22, 2022
+- image_path: ../assets/images/gallery/miro-bird-lady-sculpture.jpg 
+  alt: concrete and steel sculpture of bird lady 
+  name: Miró's Chicago 
+  loc: Chicago Loop 
+  date: October 21, 2022
+- image_path: ../assets/images/gallery/chicago-picasso-sculpture.jpg 
+  alt: steel picasso sculpture 
+  name: Chicago Picasso 
+  loc: Chicago Loop 
+  date: October 21, 2022 
+- image_path: ../assets/images/gallery/drunken-noodles-urban-space.jpg 
+  alt: drunken noodles and thai iced tea 
+  name: Keadkao 
+  loc: Urban Space 
+  loc2: Chicago Loop 
+  date: October 21, 2022
+  desc: Food in the Theater District! Drunken noodles and maybe the best thai iced tea I've ever had 
+- image_path: ../assets/images/gallery/iit-autumn-22.jpg 
+  alt: red and gold leaves 
+  name: Illinois Tech 
+  loc: Bronzeville, Chicago 
+  date: October 14, 2022
+  desc: Tea-sipping autumn days 
+- image_path: ../assets/images/gallery/lakefront-trail-oct-22.jpg 
+  alt: downtown chi from lakefront running trail 
+  name: Lakefront Trail 
+  loc: Museum Campus, Chicago 
+  date: October 9, 2022 
+  desc: Training for a race may be unpleasant, but the views along the lake aren't 
+- image_path: ../assets/images/gallery/tsaocaa-shaved-ice.jpeg 
+  alt: korean shaved ice with strawberries and peaches 
+  name: Tsaocaa 
+  loc: Chinatown, Chicago 
+  date: September 28, 2022
+  desc: Eating my weight in dessert. Snowflake ice with strawberries and white peaches 
+- image_path: ../assets/images/gallery/indiana-sand-dunes.jpeg 
+  alt: Kaylee on a giant red lifeguard chair 
+  name: Indiana Sand Dunes 
+  loc: Porter, IN 
+  date: September 18, 2022 
+  desc: We had a picnic, fell down sand mountains, and did cartwheels in Lake Michigan
+- image_path: ../assets/images/gallery/navy-pier-chi-downtown-gray.jpg 
+  alt: downtown chi at dusk over lake michigan 
+  name: Navy Pier 
+  loc: Near North Side, Chicago 
+  date: September 10, 2022
+  desc: Surprisingly, it's been 4 years since I last visited the most touristy place in Chi 
+- image_path: ../assets/images/gallery/ping-tom-park-picnic.jpg 
+  alt: chi river at dusk at a park 
+  name: Ping Tom Memorial Park 
+  loc: Chinatown, Chicago 
+  date: August 27, 2022 
+  desc: Picnic in the park 
+- image_path: ../assets/images/gallery/chi-north-view-of-madison-sent-to-amit.jpg 
+  alt: chi glass skyscrapers reflecting the river 
+  name: North View from Madison St. 
+  loc: Chicago Loop 
+  date: August 27, 2022 
+  desc: Back to crystal clarity 
+--- 
+
+<link rel="stylesheet" type="text/css" href="../gallery.css"/>
+
+{% for image in page.images %}
+        <div class="container">
+            <img src="{{ image.image_path }}" alt="{{ image.alt }}" class="image">
+            <div class="overlay">
+                <div class="text">
+                    <p style="color:white;">
+                        {{ image.name }}
+                    <br>
+                        {{ image.loc }}
+                    {% if image.loc2 %}
+                        <br>
+                        {{ image.loc2 }}
+                    {% endif %}
+                    <br>
+                        {{ image.date }}
+                    </p>
+                    {% if image.desc %}
+                        <p style="color:white;">
+                            {{ image.desc }}
+                        </p>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+{% endfor %} 
