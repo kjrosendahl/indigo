@@ -1,0 +1,119 @@
+---
+title: "June 2021 - March 2022"
+layout: post
+image: ../assets/images/camera.png
+headerImage: true
+potpourri: true
+description: "Snapshots of a STEM student: June 2021 - March 2022"
+author: kjros
+images: 
+- image_path: ../assets/images/gallery/golden-tubes-starbucks-reserve.jpg
+  alt: large golden tubes running up five floors 
+  name: Starbucks Reserve Roastery 
+  loc: Michigan Ave, Chicago 
+  date: March 5, 2022
+- image_path: ../assets/images/gallery/furious-spoon-tokyo-shoyu.jpg 
+  alt: tonkotsu ramen
+  name: Furious Spoon
+  loc: Lakeview, Chicago 
+  date: February 5, 2022 
+  desc: Hip hop ramen stop. Tonkotsu ramen with chashu
+- image_path: ../assets/images/gallery/bites-asian-kitchen-duck-yakisoba.jpg 
+  alt: noodle dish with purple flower 
+  name: BITES Asian Kitchen 
+  loc: Lakeview, Chicago 
+  date: January 29, 2022
+  desc: Roast duck and yakisoba noodles, topped with bonito flakes and sesame 
+- image_path: ../assets/images/gallery/christmas-tree-science-industry.jpeg 
+  alt: colorful christmas tree 
+  name: Museum of Science and Industry 
+  loc: Hyde Park, Chicago 
+  date: January 2, 2022
+  desc: Christmas around the World and Holidays of Lights exhibition
+- image_path: ../assets/images/gallery/short-rib-aba.jpg
+  alt: short ribs dish
+  name: Aba 
+  loc: Fulton Market, Chicago 
+  date: January 2, 2022
+  desc: Dining on mezze on the rooftop patio. Tamarind-brased short ribs with barberries 
+- image_path: ../assets/images/gallery/gaylord-opryland-resort-tn.jpg
+  alt: indoor garden with hanging lights
+  name: Gaylord Opryland Resort
+  loc: Nashville, TN
+  date: December 20, 2021
+  desc: The duality of December = festive lights + country music
+- image_path: ../assets/images/gallery/christmas-tree-millienium-park.jpg
+  alt: colorful christmas tree at night 
+  name: Christmas in Millennium Park 
+  loc: Chicago Loop
+  date: December 12, 2021
+  desc: Downtown Chi gets festive! 
+- image_path: ../assets/images/gallery/il-culaccino-vodka-pasta.jpg
+  alt: vodka pasta topped with ricotta
+  name: Il Culaccino
+  loc: South Loop, Chicago
+  date: November 3, 2021
+  desc: My favorite Italian restaurant in Chi. Pipette alla vodka with ricotta
+- image_path: ../assets/images/gallery/autumn-at-macalester.jpg
+  alt: orange and gold autumn trees 
+  name: Macalester College
+  loc: St. Paul, MN
+  date: October 30, 2021
+- image_path: ../assets/images/gallery/garfield-conservatory-koi-fish.jpg
+  alt: koi fish swimming in a pond
+  name: Garfield Conservatory
+  loc: Garfield Park, Chicago
+  date: October 22, 2021
+  desc: This botanical conservatory has some amazing gardens, plant houses, and lily ponds with koi fish!
+- image_path: ../assets/images/gallery/shedd-aq-blue-fish.jpg
+  alt: blue and orange striped fish 
+  name: The Shedd Aquarium
+  loc: Museum Campus, Chicago
+  date: September 20, 2021
+- image_path: ../assets/images/gallery/grand-lux-beignets.jpg 
+  alt: beignets with powdered sugar
+  name: Grand Lux Cafe 
+  loc: Michigan Ave, Chicago 
+  date: August 24, 2021
+  desc: That morning, I woke up from a dream where I ate beignets. Had to fulfill fate 
+- image_path: ../assets/images/gallery/arch-st-louis.jpg 
+  alt: arch in st louis with eerie storm clouds 
+  name: Gateway Arch 
+  loc: St. Louis, MO
+  date: July 11, 2021
+  desc: Right before torrential downpour
+- image_path: ../assets/images/gallery/old-settlers-day-ferris.jpg
+  alt: view of a carnival on top of a ferris wheel 
+  name: Old Settler's Day 
+  loc: Rockton, IL
+  date: June 17, 2021
+  desc: On top of the ferris wheel, at my hometown's annual festival 
+- image_path: ../assets/images/gallery/beach-in-florida-with-haley.jpg
+  alt: sunset on the ocean 
+  name: Gulfport Beach 
+  loc: St. Petersburg, FL 
+  date: June 11, 2021
+--- 
+<link rel="stylesheet" type="text/css" href="../gallery.css"/>
+
+{% for image in page.images %}
+        <div class="container">
+            <img src= "{{ image.image_path }}" alt="{{ image.alt }}" class="image">
+            <div class="overlay">
+                <div class="text">
+                    <p style="color:white;">
+                        {{ image.name }}
+                    <br>
+                        {{ image.loc }}
+                    <br>
+                        {{ image.date }}
+                    </p>
+                    {% if image.desc %}
+                        <p style="color:white;">
+                            {{ image.desc }}
+                        </p>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+{% endfor %} 
