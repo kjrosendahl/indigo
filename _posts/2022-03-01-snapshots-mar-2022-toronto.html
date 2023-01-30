@@ -70,6 +70,10 @@ images:
                         {{ image.name }}
                     <br>
                         {{ image.loc }}
+                    {% if image.loc2 %}
+                        <br>
+                        {{ image.loc2 }}
+                    {% endif %}
                     <br>
                         {{ image.date }}
                     </p>

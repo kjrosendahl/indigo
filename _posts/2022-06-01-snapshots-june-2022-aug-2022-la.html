@@ -1,7 +1,7 @@
 --- 
 title: "June 2022 - August 2022: LA"
 layout: post 
-image: ..assets/images/camera.png 
+image: ../assets/images/camera.png 
 headerImage: true 
 tag: 
 - Los Angeles
@@ -54,26 +54,30 @@ images:
   desc: Stopped by a seriously good ramen shop after a long day at the beach. Spicy tonkotsu ramen with minced pork
 - image_path: ../assets/images/gallery/grand-central-market-moon-rabbit.jpg
   alt: blue vendor stand 
-  name: Moon Rabbit, Grand Central Market 
-  loc: Downtown Los Angeles, CA
+  name: Moon Rabbit
+  loc: Grand Central Market 
+  loc2: Downtown Los Angeles, CA
   date: July 23, 2022 
   desc: Asian tea and sandwiches 
 - image_path: ../assets/images/gallery/grand-central-market-moon-rabbit-sando.jpg
   alt: takeout box of katsu chicken sandwich 
-  name: Moon Rabbit, Grand Central Market 
-  loc: Downtown Los Angeles, CA
+  name: Moon Rabbit
+  loc: Grand Central Market 
+  loc2: Downtown Los Angeles, CA
   date: July 23, 2022  
   desc: I ordered the chicken katsu sandwich on Japanese milk bread! 
 - image_path: ../assets/images/gallery/grand-central-market-shiku.jpg
   alt: vendor with red neon sign 
-  name: Shiku, Grand Central Market 
-  loc: Downtown Los Angeles, CA 
+  name: Shiku 
+  loc: Grand Central Market 
+  loc2: Downtown Los Angeles, CA 
   date: July 10, 2022 
   desc: Mom-and-pop with homestyle Korean 
 - image_path: ../assets/images/gallery/grand-central-market-shiku-chicken.jpg
   alt: takeout box of maekjuk chicken 
-  name: Shiku, Grand Central Market 
-  loc: Downtown Los Angeles, CA 
+  name: Shiku
+  loc: Grand Central Market 
+  loc2: Downtown Los Angeles, CA 
   date: July 10, 2022 
   desc: I had the doenjang-marinated chicken with rice!  
 - image_path: ../assets/images/gallery/manhattan-beach-la.jpg
@@ -85,7 +89,7 @@ images:
   alt: nighttime view of sprawling LA from above 
   name: Getty View Park 
   loc: Los Angeles, CA 
-  date: July 3, 2022 
+  date: July 4, 2022 
   desc: Star-gazing and watching fireworks illuminate LA 
 - image_path: ../assets/images/gallery/oakobing-bingsu.jpg
   alt: bowls of green tea and mango bingsu 
@@ -99,22 +103,24 @@ images:
   loc: K-town, Los Angeles, CA 
   date: July 2, 2022
   desc: Tried bossam and yukgaejang for the first time!
-- image_path: ../assets/images/gallery/outside-the-getty.jpeg
+- image_path: ../assets/images/gallery/outside-the-getty.jpg
   alt: white glass art museum 
   name: The Getty 
   loc: Los Angeles, CA 
   date: July 2, 2022
-  desc: Outside The Getty, a gorgeous art museum
+  desc: Art museum on The Getty Campus
 - image_path: ../assets/images/gallery/getty-robert.jpg
   alt: suspended glass skeleton with blue neon currents
-  name: Robert, The Getty 
-  loc: Los Angeles, CA 
+  name: Robert
+  loc: The Getty 
+  loc2: Los Angeles, CA 
   date: July 2, 2022
-  desc: My favorite display at the Getty: a levitating skeleton made of glass and pulsing neon light
+  desc: My favorite display at the Getty! A levitating skeleton made of glass and pulsing neon light
 - image_path: ../assets/images/gallery/getty-campo-vaccino.jpg
   alt: campo vaccino painting in gold frame 
-  name: Campo Vaccino, The Getty 
-  loc: Los Angeles, CA 
+  name: Campo Vaccino
+  loc: The Getty 
+  loc2: Los Angeles, CA 
   date: July 2, 2022
   desc: Hazy landscape of modern Rome 
 - image_path: ../assets/images/gallery/santa-monica-pier-ferris-wheel.jpg
@@ -130,8 +136,9 @@ images:
   desc: Turns out, this place has a LOT of books. Browse the stacks, check out the book tunnel, and buy local art! 
 - image_path: ../assets/images/gallery/grand-central-market-lemon-icecream.jpg
   alt: cup of ice cream 
-  name: McConnell's Fine Ice Creams, Grand Central Market 
-  loc: Downtown Lo Angeles, CA 
+  name: McConnell's Fine Ice Creams
+  loc: Grand Central Market 
+  loc2: Downtown Los Angeles, CA 
   date: June 25, 2022
   desc: The best ice cream I've had in my life. Seriously. Dish of lemon and marionberries 
 - image_path: ../assets/images/gallery/westwood-village-palm-trees.jpg
@@ -154,6 +161,10 @@ images:
                         {{ image.name }}
                     <br>
                         {{ image.loc }}
+                    {% if image.loc2 %}
+                        <br>
+                        {{ image.loc2 }}
+                    {% endif %}
                     <br>
                         {{ image.date }}
                     </p>
