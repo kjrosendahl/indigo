@@ -61,6 +61,15 @@ images:
 ---
 <link rel="stylesheet" type="text/css" href="../gallery.css"/>
 
+<div class="text-center">
+  <p>
+    My friend and I hit the road for Toronto the moment spring break started. We saw cool city views, 
+    explored quirky art shops, and had some traumatic experiences involving sketchy laundromats. 
+  </p>
+</div>
+
+<br>
+
 {% for image in page.images %}
         <div class="container">
             <img src="{{ image.image_path }}" alt="{{ image.alt }}" class="image">
