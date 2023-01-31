@@ -9,6 +9,16 @@ layout: page
 <h1 class="title">{{ page.title }}</h1>
 
 {% if page.potpourri %}
+    {% if page.playlist %} 
+        <div class="text-center">
+            <div class="social-links">
+                <a class="link" data-title="spotify.com/{{ page.playlist }}" href="https://open.spotify.com/playlist/{{ page.playlist }}" target = "_blank" rel="noopener">
+                    <i class="fa-brands fa-spotify fa-xl"></i>
+                </a>
+            </div>
+        </div>
+        <br>
+    {% endif %}
     {%else %}
         <span class="date">
             <time datetime="{{ page.date | date:"%d-%m-%Y" }}">{{ page.date | date: "%A. %B %d, %Y" }}</time>
@@ -24,7 +34,7 @@ layout: page
     </div>
 {% endif %}
 
-{% if page.playlist %} 
+<!-- {% if page.playlist %} 
     <div class="text-center">
         <div class="social-links">
             <a class="link" data-title="spotify.com/{{ page.playlist }}" href="https://open.spotify.com/playlist/{{ page.playlist }}" target = "_blank" rel="noopener">
@@ -32,7 +42,7 @@ layout: page
             </a>
         </div>
     </div>
-{% endif %}
+{% endif %} -->
 
 {{content}}
 
