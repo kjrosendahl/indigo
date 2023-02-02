@@ -27,7 +27,6 @@
 
 .home > .list,
 .blog > .list,
-.potpourri > .list,
 .projects > .list
     > .item
         display: block
@@ -38,7 +37,7 @@
     > .item > .url
         width: 100%
         display: block
-        padding: 20px 0
+        padding: 15px 0
         text-decoration: none
 
     > .item > .url > .title
@@ -66,6 +65,29 @@
 
     .item:hover .url aside
         color: $alpha
+
+.potpourri > .list
+    > .item
+        display: block
+        width: 95%
+        text-align: center
+
+    > .item > .url
+        width: 100%
+        display: block
+        padding: 15px 0
+        text-decoration: none
+
+    > .item > .url > .title
+        margin: 0
+        width: 75%
+        font-weight: 500
+        transition: all ease-in-out .2s
+
+    > .item:hover > .url > .title
+        color: $delta
+
+
 
 .blog > .list > .item > .url,
 .potpourri > .list > .item > .url,
