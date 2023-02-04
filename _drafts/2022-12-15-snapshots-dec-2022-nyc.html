@@ -1,0 +1,49 @@
+---
+title: "December 2022: NYC"
+layout: post 
+image: ../assets/images/camera.png
+headerImage: true 
+tag: 
+- New York City
+potpourri: true 
+category: potpourri 
+description: "Snapshots of a STEM Student: My winter visit to NYC in December 2022"
+author: kjros 
+playlist: 3mnX3YhAR3eGbrmLnpFXZD?si=c4996efde428405d
+--- 
+
+<link rel="stylesheet" type="text/css" href="../gallery.css"/>
+
+<div class="text-center">
+  <p>
+
+  </p>
+</div>
+
+<br>
+
+{% for image in page.images %}
+        <div class="container">
+            <img src="../assets/images/gallery/nyc-22/{{ image.image_path }}" alt="{{ image.alt }}" class="image">
+            <div class="overlay"> 
+                <div class="text">
+                    <p style="color:white;">
+                        {{ image.name }}
+                    <br>
+                        {{ image.loc }}
+                    {% if image.loc2 %}
+                        <br>
+                        {{ image.loc2 }}
+                    {% endif %}
+                    <br>
+                        {{ image.date }}
+                    </p>
+                    {% if image.desc %}
+                        <p style="color:white;">
+                            {{ image.desc }}
+                        </p>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+{% endfor %} 
