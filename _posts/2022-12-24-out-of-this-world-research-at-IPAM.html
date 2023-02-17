@@ -26,8 +26,24 @@ externalLink: false
     <a href="https://aerospace.org/" target="_blank">The Aerospace Corporation</a>, a research and development center located in El Segundo, CA.
 </p>
 <p>
-    My team focused on clock synchronization for pLEO constellations, a relatively new type of satellite system of interest to Aerospace. 
-    For this problem, we used Kalman filters and distributed Kalman filters, which are state estimation algorithms. 
+    pLEO constellations, comprised of hundreds to thousands of satellites, 
+    are a new type of satellite systems which orbit closer to the Earth's surface than traditional systems. 
+    Companies such as Aerospace are interested in the benefits of these satellites, such as lower latency and costs. 
+    The major drawback for pLEO constellations? 
+</p>
+
+<p>
+    Imagine a single satellite orbiting the Earth. To send, recieve, and process information, it will send a signal. 
+    This signal can either reach another satellite, or more commonly, a ground station on the Earth's surface. 
+    For pLEO satellites, the amount of surface they can cover (or, exchange signals with) is more limited, since they have a low orbit radius. 
+    Building ground stations is expensive, leading Aerospace to question: instead of having all the satellites communicate with multiple ground stations, 
+    why don't we have a small handful of fixed ground stations, instead. As a constellation orbits, only a few satellites can send information to and from such a station. 
+    Meanwhile, some satellites can also communicate with <i>each other</i> to update their own information. 
+</p>
+
+<p>
+    In particular, my team focused on simulating how satellites could synchronize their clock times (really, what time they "think" it is).
+    For running such simulations, we used Kalman filters and distributed Kalman filters, a state estimation algorithm with many applications in engineering. 
 </p>
 
 <div class= "text-center">
@@ -40,15 +56,23 @@ externalLink: false
     </figure>
 </div>
 
+<p>
+    The math is somewhat dense (though not exactly complex). In theory: a satellite would estimate its own new information, which introduces noise. 
+    Then, it would communicate with other satellites (usually those closest to it) to get more information, which allows it to 
+    correct its estimation. Keep doing this over and over, for every satellite in the constellation, and you can model a system through time. 
+</p>
 
 <p>
-    We implemented three distributed algorithms in Python: the Naive filter, the Primitive Distributed Kalman Filter (PDKF), and the 
+    We looked primarily at how the covariance of satellite clock states changed over time - in other words, how <i>uncertain</i> a satellite 
+    was about its own information. 
+    We implemented three distributed algorithms in Python: a naive filter, the primitive distributed Kalman filter (PDKF), and the 
     Decentralized Collaborative Localization (DCL) algorithm. 
-    We then ran various experiments with these filters. 
+    Each one represented different assumptions on how satellites could communicate and update information: 
+    what would happen if each satellite was 100% confident in its information? Or if you changed the size of the constellations? 
 </p>
 
 <p>  
-    I wrote the code for the Naive filter and PDFK, which ran each algorithm and displayed their results. 
+    I wrote the code for the naive filter and PDFK, which ran each algorithm and displayed their results. 
     Since the filters relied on helper classes, which kept track of a single satellite state, I also helped develop and debug
     these classes.
 </p>
@@ -59,14 +83,15 @@ externalLink: false
 
 <p>  
     After finishing the code for each filter, we then began experimentation. 
-    I tuned the Naive filter, which meant varying parameters such as clock noise and initial clock uncertainty. 
+    I tuned the naive filter, which meant varying parameters such as noise and initial clock uncertainty. 
     This, in combination with varying the number of satellites and planes in the constellation, showed tuning could lead to 
     lower values of satellite bias uncertainties. 
 </p>
 
 <p>
-    From this, my team turned towards tuning the DCL algorithm. When we saw convergence of satellite uncertainties, 
-    we began to focus more on DCL, as it seemed to have the best performance out of all our filters. 
+    From this, my team turned towards tuning the DCL algorithm. When we saw convergence of satellite uncertainties (meaning over time, 
+    satellites became increasingly more certain about their states), 
+    we began to focus on DCL, as it seemed to have the best performance out of all our filters. 
 </p>
 
 <div class="text-center">
@@ -74,8 +99,8 @@ externalLink: false
 </div>
 
 <p>
-    Our other experiments with the DCL algorithm included varying the constellation sizes, limiting communcation 
-    between planes, and changing the order of measurement updates. 
+    Our other experiments with the DCL algorithm included varying the constellation sizes, limiting communcation between certain 
+    sets of satellites, and changing the order of satellite communcation. 
 </p>
   
 <p>
@@ -85,10 +110,19 @@ externalLink: false
 </p> 
 
 <p>
-    My team plans on presenting a poster on our work at the 
+    My team presented a poster on our work at the
     <a href="https://www.jointmathematicsmeetings.org//jmm" target="_blank"> Joint Mathematics Meeting</a> in 
     Boston, January 2023. 
-    Additionally, I plan on attending the 
-    <a href = "https://math.unl.edu/ncuwm" target="_blank"> Nebraska Conference for Undergraduate Women in Mathematics</a>
-    in January to present our research. 
+    I also presented solo at the 25th
+    <a href = "https://math.unl.edu/ncuwm" target="_blank"> Nebraska Conference for Undergraduate Women in Mathematics</a> 
+    later that month:  
+</p>
+
+<p class="text-center">
+    <img src="../assets/images/projects/ncuwm.jpg" alt="me standing in front of my poster" style="max-width:50%">
+</p>
+
+<p>
+    Check out our poster and results <a href="https://drive.google.com/file/d/1buYRt5Ct7bO7Fr4f6bnwlTeaWTxB14w7/view?usp=share_link" target="_blank">here</a>.
+    For more information about my experiences at these conferences, check out the links below! 
 </p>
