@@ -9,6 +9,22 @@ category: blog
 author: kjros 
 description: "For those who need the quick and clean version of me"
 hidden: true
+
+interests: 
+- discrete mathematics
+- graph theory 
+- number theory 
+- formal logic 
+- coding/this project! 
+- traveling 
+- collecting transit cards 
+- reading 
+- writing 
+- cooking 
+- trying new food 
+- paper crafts/cards 
+- video games 
+- music
 --- 
 
 <div class="text-center">
@@ -31,20 +47,14 @@ hidden: true
 <p>
     My academic advisor mentioned in my second year how I should have a website to showcase my projects and a little about myself. 
     I pondered this for a while; I have always wanted a personal site, reminiscent of the era of MySpace and IM.
-</p>
-
-<p>
+    <br>
     The thing is, I wanted total control, and this meant designing <i>anything</i> I wanted. I had used website builders in high school, 
     but they didn't have quite the same freedom I was seeking. I wanted to create something I could be proud of, understand what was going behind the scenes, and have fun! 
-</p>
-
-<p>
+    <br>
     So, I doubled down and started studying: HTML, CSS, a little JavaSript... You can see the result here! 
     I did use a Jekyll theme, but I'm still parsing and exploring the files. 
     It was through this project I found my interest in front-end design. After graduation, I hope to continue following this passion. 
-</p>
-
-<p>
+    <br>
     I'm pretty sure my advisor was suggesting something along the lines of a Google site, but I've never been one to color inside the lines. 
 </p>
 
@@ -52,37 +62,13 @@ hidden: true
 <div class="text-center">
     <h4>Interests:</h4>
     <p>
-        discrete mathematics 
-        <br>
-        <i>graph theory</i>
-        <br>
-        <i>number theory</i>
-        <br>
-        <i>formal logic</i>
-        <br> 
-        <i>combinatorics</i>
-        <br>
-        <i>set theory</i>
-        <br>
-        coding/this site!
-        <br>
-        traveling
-        <br>
-        collecting transit cards
-        <br>
-        reading
-        <br> 
-        writing 
-        <br> 
-        cooking 
-        <br> 
-        trying new food 
-        <br> 
-        paper crafts/cards 
-        <br>
-        video games 
-        <br>
-        music 
+        {% for interest in page.interests %}
+            {{ interest }}
+
+            {% if forloop.last == false %} 
+                <br> 
+            {% endif %}
+        {% endfor %}
     </p>
 </div>
 
