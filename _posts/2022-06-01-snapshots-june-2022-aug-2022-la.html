@@ -8,6 +8,7 @@ tag:
 - travel
 potpourri: true 
 category: potpourri 
+rel_path: la-22
 description: "Snapshots of a STEM Student: My summer in LA in 2022"
 author: kjros 
 playlist: 56hgBMlG34OwDsbwDReXTd?si=126a3ece5e264df9
@@ -162,30 +163,3 @@ images:
 </p>
 
 <br>
-
-{% for image in page.images %}
-        <div class="container">
-          <img src="../assets/images/gallery/la-22/{{ image.image_path }}" alt="{{ image.alt }}" class="image">
-            <div class="overlay">
-                <div class="text">
-                    <p style="color:white;">
-                        {{ image.name }}
-                    <br>
-                        {{ image.loc }}
-                    {% if image.loc2 %}
-                        <br>
-                        {{ image.loc2 }}
-                    {% endif %}
-                    <br>
-                        {{ image.date }}
-                    </p>
-                    {% if image.desc %}
-                        <p style="color:white;">
-                            {{ image.desc }}
-                        </p>
-                    {% endif %}
-                </div>
-            </div>
-        </div>
-{% endfor %} 
-

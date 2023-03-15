@@ -1,0 +1,26 @@
+<link rel="stylesheet" type="text/css" href="../gallery.css"/>
+{% for image in page.images %}
+        <div class="container">
+            <img src="../assets/images/gallery/{{ page.rel_path }}/{{ image.image_path }}" alt="{{ image.alt }}" class="image">
+            <div class="overlay">
+                <div class="text">
+                    <p style="color:white;">
+                        {{ image.name }}
+                    <br>
+                        {{ image.loc }}
+                    {% if image.loc2 %}
+                        <br>
+                        {{ image.loc2 }}
+                    {% endif %}
+                    <br>
+                        {{ image.date }}
+                    </p>
+                    {% if image.desc %}
+                        <p style="color:white;">
+                            {{ image.desc }}
+                        </p>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+{% endfor %} 

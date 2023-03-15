@@ -8,6 +8,7 @@ tag:
 - travel
 potpourri: true 
 category: potpourri 
+rel_path: sf-22
 description: "Snapshots of a STEM student: my weekend trip to San Francisco in 2022"
 author: kjros 
 playlist: 7kBB5Uo5wBQTwHSs3Ar4Sv?si=0e42f02d194647fb
@@ -64,29 +65,3 @@ images:
 </p>
 
 <br>
-
-{% for image in page.images %}
-        <div class="container">
-          <img src="../assets/images/gallery/sf-22/{{ image.image_path }}" alt="{{ image.alt }}" class="image">
-            <div class="overlay">
-                <div class="text">
-                    <p style="color:white;">
-                        {{ image.name }}
-                    <br>
-                        {{ image.loc }}
-                    {% if image.loc2 %}
-                        <br>
-                        {{ image.loc2 }}
-                    {% endif %}
-                    <br>
-                        {{ image.date }}
-                    </p>
-                    {% if image.desc %}
-                        <p style="color:white;">
-                            {{ image.desc }}
-                        </p>
-                    {% endif %}
-                </div>
-            </div>
-        </div>
-{% endfor %} 

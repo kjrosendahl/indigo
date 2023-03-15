@@ -99,34 +99,8 @@ images:
   date: September 12, 2020 
   desc: Walking along Madison Street on a rainy day
 ---
-<link rel="stylesheet" type="text/css" href="../gallery.css"/>
-
 <p class="text-center">
   Escaping to the Caribbean and moving to Chicago
 </p>
 
-{% for image in page.images %}
-        <div class="container">
-            <img src="../assets/images/gallery/{{ image.image_path }}" alt="{{ image.alt }}" class="image">
-            <div class="overlay">
-                <div class="text">
-                    <p style="color:white;">
-                        {{ image.name }}
-                    <br>
-                        {{ image.loc }}
-                    {% if image.loc2 %}
-                        <br>
-                        {{ image.loc2 }}
-                    {% endif %}
-                    <br>
-                        {{ image.date }}
-                    </p>
-                    {% if image.desc %}
-                        <p style="color:white;">
-                            {{ image.desc }}
-                        </p>
-                    {% endif %}
-                </div>
-            </div>
-        </div>
-{% endfor %} 
+<br>

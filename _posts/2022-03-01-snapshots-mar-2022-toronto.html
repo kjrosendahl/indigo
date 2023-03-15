@@ -8,6 +8,7 @@ tag:
 - travel
 potpourri: true
 category: potpourri
+rel_path: toronto-22
 description: "Snapshots of a STEM student: My trip to Toronto in March 2022"
 author: kjros
 playlist: 0EH5qjYoLsg5WWBQu1XfAk?si=d98cd97c72054b83
@@ -61,7 +62,6 @@ images:
   date: March 12, 2022 
   desc: One of the 98 rooms!
 ---
-<link rel="stylesheet" type="text/css" href="../gallery.css"/>
 
 
 <p class="text-center">
@@ -70,29 +70,3 @@ images:
 </p>
 
 <br>
-
-{% for image in page.images %}
-        <div class="container">
-            <img src="../assets/images/gallery/toronto-22/{{ image.image_path }}" alt="{{ image.alt }}" class="image">
-            <div class="overlay"> 
-                <div class="text">
-                    <p style="color:white;">
-                        {{ image.name }}
-                    <br>
-                        {{ image.loc }}
-                    {% if image.loc2 %}
-                        <br>
-                        {{ image.loc2 }}
-                    {% endif %}
-                    <br>
-                        {{ image.date }}
-                    </p>
-                    {% if image.desc %}
-                        <p style="color:white;">
-                            {{ image.desc }}
-                        </p>
-                    {% endif %}
-                </div>
-            </div>
-        </div>
-{% endfor %} 

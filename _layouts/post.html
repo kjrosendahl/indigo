@@ -33,19 +33,14 @@ layout: page
         </div>
     {% endif %}
 
-    <!-- {% if page.playlist %} 
-        <div class="text-center">
-            <div class="social-links">
-                <a class="link" data-title="spotify.com/{{ page.playlist }}" href="https://open.spotify.com/playlist/{{ page.playlist }}" target = "_blank" rel="noopener">
-                    <i class="fa-brands fa-spotify fa-xl"></i>
-                </a>
-            </div>
-        </div>
-    {% endif %} -->
-
     <div class="{% if site.animation %}animated{% endif %}">
         {{content}}
+        
+        {% if page.potpourri %}
+            {% include potpourri.html %}
+        {% endif %}
     </div>
+
 
     {% if site.post-advance-links contains page.category %}
         {% unless page.hidden %}
