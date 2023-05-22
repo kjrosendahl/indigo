@@ -1,4 +1,4 @@
-{% unless page.category == 'poetry' %}
+{% unless page.category == 'poetry' or page.title == 'Poetry' %}
 <nav class="{% if page.title == "Home" %}nav-home{% else %}nav{% endif %}">
     <ul class="list">
         {% if page.title != "Home" %}
