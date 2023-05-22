@@ -1,0 +1,142 @@
+---
+title: The Lead Crisis in Chicago 
+layout: post
+date: 2023-04-28 15:25 
+tag: 
+- research 
+- IIT 
+- Chicago 
+- public health 
+projects: true 
+description: "My research at IIT on lead levels in Chicago water" 
+category: project 
+author: kjros 
+---  
+
+<p>
+    With the Flint, Michigan crisis, the world has become more wary of the 
+    <a href='https://www.epa.gov/ground-water-and-drinking-water/basic-information-about-lead-drinking-water' target="_blank">dangers of ingesting lead</a>, commonly found in paint and tap water. 
+    Impairment in child development, damage to the cardiovascular system, decreased central functions: list goes on and on.
+    Lead in drinking water comes from absorption from lead pipes, called Lead Service Lines (LSLs). 
+    In 1986, the 
+    <a href='https://www.epa.gov/water-research/technical-support-water-infrastructure' target="_blank">creation of all new LSLs</a>
+     were banned by the Environmental Protection Agency (EPA), and cities were directed to replace them with safer pipes made of copper.
+</p>
+
+<p>
+    Chicago had an estimated 400,000 LSLs supplying water to its citizens, and has until 2077 to replace all of them. 
+    The question is: why have they 
+    <a href='https://chicago.suntimes.com/2022/12/2/23488902/lead-water-service-line-replacement-chicago' target='_blank'>
+        only replaced 280 lines</a>, as of December 2022? Moreover, why are so few Chicagoans aware of this problem? 
+    How is this affecting our city? 
+</p>
+
+<hr> 
+
+<p>
+    In Spring 2023, I led a team of IIT students to investigate this issue. This was through MATH 497: Special Problems in Business, 
+    Government, and Industry, run by <a href='http://math.iit.edu/~rellis/' target='_blank'>Professor Robert B. Ellis</a>
+    of the Applied Mathematics department. The class was 
+    credited as an "Interprofessional Project" (IPRO) course, which are designed for students of different majors to
+    solve problems related to technology, health, community, and innovation. 
+</p>
+
+<p>
+    The Peanut Butter Hunters (PBH) spent the semester exploring data released by Chicago on lead levels in drinking water. 
+     With statistical analysis, data science techniques, and geo-spatial visualization, we concluded 
+    there was, indeed, a lead crisis in the city. 
+</p>
+
+<div class="text-center">
+    <figure> 
+        <img src="../assets/images/projects/ipro/pbh_group.jpg" alt="my team with our poster and presentation on IPRO day" style="max-width:90%">
+        <figcaption>The Peanut Butter Hunters, including the infamous <a href='https://x1atomic.onuniverse.com/' target='_blank'>Jacob H. Thomas</a>. 
+        And yes, our screen was large enough to strike terror into the hearts of anyone who walked by.</figcaption>
+    </figure>
+</div>
+
+<p>
+    Here is our research, which won us the runner-up title in the Health and Community Tract at IPRO day. 
+    We were also advised by 
+    <a href='https://safewaterengineering.com/' target="_blank">
+        Elin Betanzo</a>, a water engineer who founded Safe Water Engineering and worked on the Flint crisis. 
+    I am forever grateful for the guidance of Professor Ellis and Ms. Betanzo; without them, we wouldn't have discovered 
+    such devastating results. 
+</p>
+
+<hr> 
+
+<h3>The History</h3>
+
+<p>
+    As stated earlier, LSLs weren't banned until 1986; any residences built before then likely have LSLs servicing their water. 
+    In 1991, the EPA set a federal regulation called the 
+    <a href='https://www.epa.gov/dwreginfo/lead-and-copper-rule' target='_blank'>Lead and Copper Rule</a> (LCR): 
+    no more than 10% of water samples could exceed 15 parts per billion (ppb) of lead, the Lead Action Level (LAL). 
+    Otherwise, the EPA and the city must take action. 
+</p>
+
+<p>
+    In 2022, Chicago 
+    <a href='https://www.chicago.gov/content/dam/city/depts/water/ConsumerConfidenceReports/2022_WaterQualityReport.pdf'>
+        reported a 90th percentile of 6.8 ppb</a>; 
+        <i>technically</i>, they are in compliance with the LCR. We find several issues with this yearly procedure: 
+</p>
+
+<p>
+    <ol>
+        <li>Chicago is only required to test 50 households, a mere .0045% of total residences. Under the LCR, up to five households 
+            could have had more than 15 ppb. 
+        </li>
+        <li>There's evidence the city only <a href='https://www.chicagotribune.com/investigations/ct-chicago-water-lead-contamination-20180411-htmlstory.html' target="_blank"> 
+            tests households of employees who work for the Chicago Department of Water Management</a> (CDWM).</li>
+        <li>Current procedures use samples from the 
+            <a href='https://www.epa.gov/sites/default/files/documents/LCR_Sample_Form.pdf' target='_blank'>
+                1st liter drawn from your tap</a>. This may not be the most representative of your 
+            average lead level, since it takes time for water to travel from the street main pipe (possibly an LSL) into your residence. 
+        </li>
+    </ol>
+</p>
+
+<p>
+    Although the first two factors are unlikely to change anytime soon, the issue of using 1st liter draws may soon be mitigated. 
+    In October 2024, the EPA will start enforcing the 
+    <a href='https://www.epa.gov/ground-water-and-drinking-water/revised-lead-and-copper-rule' target="_blank">Lead and Copper Rule Revision</a> (LCRR): 
+    rather than taking the 1st liter as the sample, they will take the 5th liter sample. 
+    We would expect that the later draw indicates lead levels more accurately. 
+    It's unknown whether Chicago will still be in compliance under the LCRR. 
+</p>
+<!-- 
+<div class= "text-center">
+    <img src="../assets/images/projects/ipro/LCR_LCRR_diagram.png" alt="diagram of sequential draws" style="max-width:80%">
+</div>
+<br> -->
+<div class="text-center">
+    <figure>
+        <img src="../assets/images/projects/ipro/LCR_LCRR_diagram.png" alt="diagram of sequential draws" style="max-width:80%">
+    <figcaption>Sampling procedures for lead testing. On the left is the current method under the LCR; on the right is the future method under the LCRR.</figcaption>   
+    </figure>
+</div>
+
+<p>
+    The PBH were interested in ALL lead results reported by the city within the last few years - not just these 50 households. 
+    Although uncommon knowledge, any Chicago resident is eligible to 
+    <a href='https://www.chicagowaterquality.org/home' target="_blank">test their lead for free</a>,
+     a service provided by CDWM. 
+    They may request a lead testing kit or schedule an appointment for a CDWM employee to test it for them. 
+    The initial testing kit instructs 1st liter draws, but some households may perform follow-up <i>sequential testing</i>, in which 
+    10 1-liter draws are taken in a row. 
+</p>
+
+<p>
+    Our research focused on the results from sequential testing. We examined how well the 1st draw represents a household's lead levels, or the current method. 
+    Using the 1st and 5th draws of the sequential results, we also compared the effectiveness of the LCRR's procedure in representing lead over the LCR. 
+    Finally, we investigated the relationship between low income and high lead levels.
+</p>
+
+<p>
+    The <a href="https://www.chicagowaterquality.org/home#results " target="_blank">data we used in this research</a> 
+    is public information, released by the CDWM. <a href='https://www.cookcountyassessor.com/community-data' target='_blank'>
+        Data on all Chicago households</a>, such as price, income, and location, was 
+    retrieved from the Cook County Assessor's Office. 
+</p>
