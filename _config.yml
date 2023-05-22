@@ -108,6 +108,7 @@ plugins:
 
 compress_html:
   ignore:
+  blanklines: true
     envs:
       - development
       - stage
