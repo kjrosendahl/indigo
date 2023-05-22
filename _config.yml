@@ -107,8 +107,8 @@ plugins:
   - jekyll-paginate-v2
 
 compress_html:
-  ignore:
   blanklines: true
+  ignore:
     envs:
       - development
       - stage
