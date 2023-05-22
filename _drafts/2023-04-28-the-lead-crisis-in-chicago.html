@@ -106,15 +106,11 @@ author: kjros
     We would expect that the later draw indicates lead levels more accurately. 
     It's unknown whether Chicago will still be in compliance under the LCRR. 
 </p>
-<!-- 
-<div class= "text-center">
-    <img src="../assets/images/projects/ipro/LCR_LCRR_diagram.png" alt="diagram of sequential draws" style="max-width:80%">
-</div>
-<br> -->
+
 <div class="text-center">
     <figure>
         <img src="../assets/images/projects/ipro/LCR_LCRR_diagram.png" alt="diagram of sequential draws" style="max-width:80%">
-    <figcaption>Sampling procedures for lead testing. On the left is the current method under the LCR; on the right is the future method under the LCRR.</figcaption>   
+        <figcaption>Sampling procedures for lead testing. On the left is the current method under the LCR; on the right is the future method under the LCRR.</figcaption>   
     </figure>
 </div>
 
@@ -139,4 +135,60 @@ author: kjros
     is public information, released by the CDWM. <a href='https://www.cookcountyassessor.com/community-data' target='_blank'>
         Data on all Chicago households</a>, such as price, income, and location, was 
     retrieved from the Cook County Assessor's Office. 
+</p>
+
+<hr>
+
+<h3>The Results </h3>
+
+<p>
+    The LCRR arose from questions on how best to sample water for lead testing: is the 1st or 5th draw more indicative? Or is it another liter draw? 
+    We sought to answer this question by comparing each liter draw. 
+    For each household's report, we calculated the average lead level across the 10 draws. 
+    In theory, the draw best representing lead would follow a similar distribution as the average lead level; 
+    we drew the cummulative distribution function (CDF) for each of the 10 draws and compared the difference between distributions: 
+</p>
+
+<div class="text-center">
+    <figure>
+        <img src="../assets/images/projects/ipro/cdf-sse.png" alt="line graph of sse of cdfs for the different draws with the average lead" style="max-width:95%">
+        <figcaption>Sum of Square Errors (SSE) between the average lead level each sequential draw</figcaption>
+    </figure>
+</div>
+
+<p>
+    Here, we marked the SSE of the 1st liter (LCR) and 5th liter (LCRR). We saw that the 5th draw 
+    has a smaller error; even so, the smallest error for all draws belonged to the 8th draw. 
+    Looking at the CDFs, we clearly see the 1st draw CDF varies from the average lead moreso than the 5th or 8th draw. 
+</p>
+
+<div class="text-center">
+    <figure>
+        <img src="../assets/images/projects/ipro/cdfs.png" alt="cdf of 1st, 5th, average, and 8th draws" style="max-width:110%">
+        <figcaption>CDFs of the 1st draw, 5th draw, 8th draw, and mean lead</figcaption>
+    </figure>
+</div>
+
+<p>
+    Upon a simple examination of the spread of lead levels for each draw and the average, 
+    we also see the 8th draw is of the worst three draws of the sequential data. 
+</p>
+
+<div class="text-center">
+    <figure>
+        <img src="../assets/images/projects/ipro/boxplot-draws.png" alt="boxplots of all draws and the average" style="max-width:100%">
+        <figcaption>Boxplots of lead amount across the 10 draws and the average</figcaption>
+    </figure>
+</div>
+
+<p>
+    From this work, we may conclude the LCRR proposes a better sampling method; i.e., one that represents the average lead case 
+    better than the current LCR. Since we found the 8th draw to have a closer distribution to the average case, we question: will the LCRR 
+    require further revisions? In the above graph, we also saw a general trend: the more liters collected,
+    the higher the quantiles of lead. Perhaps collecting <i>even later</i> draws can give a better estimate. 
+</p>
+
+<p>
+    This might need to be investigated further; this could be a problem unique to Chicago.
+    Regardless, for the city, the LCRR will be an improvement upon current lead testing procedure. 
 </p>
