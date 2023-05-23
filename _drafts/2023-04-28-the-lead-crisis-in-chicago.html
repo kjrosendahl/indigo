@@ -11,7 +11,7 @@ projects: true
 description: "My research at IIT on lead levels in Chicago water" 
 category: project 
 author: kjros 
----  
+---
 
 <p>
     With the Flint, Michigan crisis, the world has become more wary of the 
@@ -159,7 +159,7 @@ author: kjros
 <p>
     Here, we marked the SSE of the 1st liter (LCR) and 5th liter (LCRR). We saw that the 5th draw 
     has a smaller error; even so, the smallest error for all draws belonged to the 8th draw. 
-    Looking at the CDFs, we clearly see the 1st draw CDF varies from the average lead moreso than the 5th or 8th draw. 
+    Looking at the CDFs, we clearly saw the 1st draw CDF varies from the average lead moreso than the 5th or 8th draw. 
 </p>
 
 <div class="text-center">
@@ -171,7 +171,7 @@ author: kjros
 
 <p>
     Upon a simple examination of the spread of lead levels for each draw and the average, 
-    we also see the 8th draw is of the worst three draws of the sequential data. 
+    we also saw the 8th draw is of the worst three draws of the sequential data. 
 </p>
 
 <div class="text-center">
@@ -182,13 +182,53 @@ author: kjros
 </div>
 
 <p>
-    From this work, we may conclude the LCRR proposes a better sampling method; i.e., one that represents the average lead case 
-    better than the current LCR. Since we found the 8th draw to have a closer distribution to the average case, we question: will the LCRR 
+    From this work, we concluded the LCRR proposes a better sampling method; i.e., one that represents the average lead case 
+    better than the current LCR. Since we found the 8th draw to have a closer distribution to the average case, we questioned: will the LCRR 
     require further revisions? In the above graph, we also saw a general trend: the more liters collected,
-    the higher the quantiles of lead. Perhaps collecting <i>even later</i> draws can give a better estimate. 
+    the higher the quantiles of lead. Perhaps collecting <i>even later</i> draws would give a better estimate. 
 </p>
 
 <p>
     This might need to be investigated further; this could be a problem unique to Chicago.
     Regardless, for the city, the LCRR will be an improvement upon current lead testing procedure. 
+</p>
+
+<hr> 
+
+<p>
+    In the testing kits supplied by the CDWM, the first liter is collected from the tap. 
+    After this, additional liters are collected at the 2-3 and 5 minute mark. 
+    We compare this initial "timed draw" method with the follow up sequential draw method: 
+    do they have a relationship? 
+</p>
+
+<div class="text-center">
+    <figure>
+        <img src="../assets/images/projects/ipro/water-kit.png" alt="instructions on timed draw procedure">
+        <figcaption>Lead testing kit instructions from the CDWM</figcaption>
+    </figure>
+</div>
+
+<p>
+    We calculated Pearson correlation coefficients between initial and follow-up results; values close to 1 
+    between, say, the 3 minute results and the 5th draw may indicate validity in the initial testing methods. 
+</p>
+
+<div class="text-center">
+    <figure>
+        <img src="../assets/images/projects/ipro/corr-matrix.png" alt="correlation matrix with color map" style="max-width:95%">
+        <figcaption>Correlation matrix of timed draws and sequential draws</figcaption>
+    </figure>
+</div>
+
+<p>
+    The coefficients between draws demonstrate low correlations. 
+    In comparing the 5 minute draw to the sequential draws, we saw it had a higher correlation with the 5th draw than the 1st, 
+    but at a value of .49, the relationship wasn't strong. 
+</p>
+
+<p>
+    We also considered the R&#178; values of simple linear regression between the draws. 
+    The 5 minute draw had an R&#178; value of .213 with the 5th draw, and .170 with the 8th draw. 
+    This indicated the initial tests do not accurately predict results from the follow-up tests. 
 </p>
