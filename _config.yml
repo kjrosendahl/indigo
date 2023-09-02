@@ -23,7 +23,7 @@ resume-url: https://drive.google.com/file/d/1a7PBcbHrSed7CHjbn4dd-VEeChjL96B4/vi
 # url: https://sergiokopplin.github.io/indigo
 your url: https://kjrosendahl.github.io
 
-permalink: /:title/
+permalink: /:categories/:title/
 
 # To enable google analytics, supply your token below
 # analytics-google: 'UA-MYANALYTICS'
