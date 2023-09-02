@@ -17,7 +17,7 @@ title: Potpourri
 
 <section class="list">
     {% for post in site.posts %}
-        {% if post.potpourri %}
+        {% if post.category == 'potpourri' %}
             <div class="item {% if post.star %}star{% endif %}">
                 <a class="url" href="{{ site.url }}{{ post.url }}">
         			<h3 class="title">{{ post.title }}</h3>

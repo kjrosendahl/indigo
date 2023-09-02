@@ -7,7 +7,7 @@ layout: page
 
     <h1 class="title">{{ page.title }}</h1>
 
-    {% if page.nodate or page.potpourri %}
+    {% if page.nodate or page.category == 'potpourri' %}
         {% if page.playlist %} 
             <div class="text-center">
                 <div class="social-links">
@@ -36,7 +36,7 @@ layout: page
     <div class="{% if site.animation %}animated{% endif %}">
         {{content}}
         
-        {% if page.potpourri %}
+        {% if page.category == 'potpourri' %}
             {% include potpourri.html %}
         {% endif %}
     </div>
@@ -45,12 +45,12 @@ layout: page
     {% if site.post-advance-links contains page.category %}
         {% unless page.hidden %}
             <div class="blog-navigation">
-                {% if page.previous.hidden == false and page.previous.url %}
+                {% if page.previous.hidden == false and page.previous.url and page.previous.category == page.category %}
                     <a class="prev" href="{{ site.url }}{{ page.previous.url }}">&laquo; {{ page.previous.title }}</a>
                 {% else %}
                     <a class="prev"></a>
                 {% endif %}
-                {% if page.next.hidden == false and page.next.url %}
+                {% if page.next.hidden == false and page.next.url and page.next.category == page.category %}
                     <a class="next" href="{{ site.url }}{{ page.next.url }}">{{ page.next.title }} &raquo;</a>
                 {% endif %}
             </div>
