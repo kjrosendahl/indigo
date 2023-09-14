@@ -7,9 +7,11 @@ title: Activities
     {% for post in site.posts %}
         {% if post.category == 'activities' %}
             <div class="item {% if post.star %}star{% endif %}">
-            <a class="url" href="{{ site.url }}{{ post.url }}">
-                <h3 class="title">{{ post.title }}</h3>
-            </a>
+                <div class="text-center">
+                <a class="url" href="{{ site.url }}{{ post.url }}">
+                    <h3 class="title">{{ post.title }}</h3>
+                </a>
+                </div>
             </div>
         {% endif %}
     {% endfor %}  
