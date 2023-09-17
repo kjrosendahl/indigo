@@ -1,9 +1,21 @@
 ---
 layout: page
 ---
-    {% if page.image and page.headerImage %}
-        <img class="title-image" src="{{ page.image }}" alt="{{ page.title }}">
+
+
+    {% if page.headerImage %}
+         {% if page.image and page.image-dark %}
+            <picture> 
+                <source srcset="{{ page.image-dark }}" media="(prefers-color-scheme: dark)" alt="{{ page.title }}" style="max-height:120px; display:block; margin:0 auto;"> 
+                <img src="{{ page.image }}" alt="{{ page.title }}" style="max-height:120px; display:block; margin:0 auto;">
+            </picture>
+        {% else %}
+            {% if page.image %}
+                <img class="title-image" src="{{ page.image }}" alt="{{ page.title }}">
+            {% endif %}
+        {% endif %}
     {% endif %}
+
 
     <h1 class="title">{{ page.title }}</h1>
 
