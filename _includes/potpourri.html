@@ -5,6 +5,9 @@
             <div class="overlay">
                 <div class="text">
                     <p style="color:white;">
+                        {% if image.title %}
+                        <i>{{ image.title }},</i>
+                        {% endif %}
                         {{ image.name }}
                     <br>
                         {{ image.loc }}
