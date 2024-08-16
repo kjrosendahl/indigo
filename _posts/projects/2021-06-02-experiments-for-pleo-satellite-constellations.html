@@ -29,7 +29,7 @@ externalLink: false
     pLEO constellations, comprised of hundreds to thousands of satellites, 
     are a new type of satellite systems which orbit closer to the Earth's surface than traditional systems. 
     SpaceX's Starlink is just one example of such an implementation, and companies 
-    such as Aerosace are interested in the benefits such as lower latency and costs. 
+    such as Aerosace are interested in the benefits such as lower latency and increased bandwidth. 
     <!-- Companies such as Aerospace are interested in the benefits of these satellites, such as lower latency and costs.  -->
     <!-- The major drawback for pLEO constellations?  -->
 </p>
@@ -37,15 +37,15 @@ externalLink: false
 <p>
     However, there are a few major drawbacks. A single satellite orbiting the Earth will send a signal to exchange information. 
     This can reach another satellite, or more commonly, a ground station on the surface. 
-    For pLEO satellites, the amount of surface they can cover is more limited, as they have a lower orbit radius (aka, a satellite footprint). 
+    Compared to regular satellites, pLEO satellites cover significantly less area since they have a lower orbit radius (aka, a satellite footprint).
     Building and maintaining ground stations is expensive, so many companies are considering an alternate solution: 
-    rather than building enough stations to cover the globe, fix a small number. As a constellation orbits, only a few satellites at 
-    any givem time can send information to and from a station, and allow each satellite to communicate with each other.
+    rather than building enough stations to adequately cover the globe, fix a small number. As a system orbits, only a few satellites at 
+    any given time will be within range to exchange information. Finally, allow satellites to communicate with each other for information synchronization. 
 </p>
 
 <p>
     In particular, my team focused on simulating how satellites could synchronize their clock times. 
-    This is not necessarily an easy task, considering things like latency and information loss. 
+    This was not a trivial task, considering things like information latency. 
     For running such simulations, we used Kalman filters and distributed Kalman filters, a state estimation algorithm with many applications in engineering. 
 </p>
 
@@ -64,16 +64,16 @@ externalLink: false
 
 <p>
     We looked primarily at how the covariance of satellite clock states changed over time. 
-    We implemented three distributed algorithms in Python: a naive filter, the primitive distributed Kalman filter (PDKF), and the 
-    Decentralized Collaborative Localization (DCL) algorithm. 
-    Each one represented different assumptions on how satellites could communicate and update information: 
-    what would happen if each satellite was 100% confident in its information? Or if you changed the size of the constellations? 
+    We implemented three algorithms in Python to simulate satellite communication: 
+    <ol>
+        <li>Naive filter</li>: assumes any pair of satellites can interact. Infeasible given the constraints, but serves as the base model. 
+        <li>Primitive distributed Kalman Filter (PDKF)</li>: each satellite runs its own filter (or estimation) without accounting for cross-covariances between other satellites. 
+        <li>Decentralized Collaborative Localization (DCL) algorithm</li>: each satellite runs its own filter and approximates cross-covariances whenever it communicates with another satellite.
+    </ol>
 </p>
 
 <p>  
-    I wrote the code for the naive filter and PDFK, which ran each algorithm and displayed their results. 
-    Since the filters relied on helper classes, which kept track of a single satellite state, I also helped develop and debug
-    these classes.
+    I wrote the code for the naive filter and PDFK. I also helped develop the scripts which modeled satellite states. 
 </p>
 
 <div class="text-center">
@@ -81,15 +81,10 @@ externalLink: false
 </div>
 
 <p>  
-    After finishing the code for each filter, we then began experimentation. 
-    I tuned the naive filter for noise and initial uncertainty. 
-    This, in combination with varying the number of satellites and planes in the constellation, showed tuning could lead to 
-    lower values of satellite bias uncertainties. 
-</p>
-
-<p>
-    From this, my team turned towards tuning the DCL algorithm. When we saw convergence of satellite uncertainties, 
-    we began to focus on DCL, as it seemed to have the best performance out of all our filters. 
+    After finishing the code for each filter, we then began experimentation and hypertuning. 
+    I primarily tuned the naive filter for noise and initial uncertainty. This, in combination with varying the number of satellites 
+    and planes in the constillaton, showed proper tuning could lead to lower values of satellite bias uncertainties. 
+    From this, we turned towards tuning the DCL algorithm, where we began to see convergence of satellite uncertainties. 
 </p>
 
 <div class="text-center">
@@ -98,8 +93,9 @@ externalLink: false
 
 <p>
     Our other experiments with the DCL algorithm included varying the constellation sizes, limiting communication between certain 
-    sets of satellites, and changing the order of satellite communication. We found that updating the system from a central satellite outward 
-    performed best, much like heat-transfer. 
+    sets of satellites, and changing the order of satellite communication. We found the best performing communication order was to 
+    allow information proprogate outwards from a central satellite which could communicate with the ground. 
+    This solution is similar to the process of heat dissipation in a lattice. 
 </p>
   
 <p>
