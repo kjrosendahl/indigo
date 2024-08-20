@@ -99,7 +99,7 @@ author: kjros
  </p>
 
  <p>
-    Thus, we began looking at implementing a question-answer chatbot our Streamlit app. 
+    Thus, we began looking at implementing a chatbot our Streamlit app for answering user questions. 
     The main objective was to translate natural language queries into SQL, fetching the information from BigQuery, 
     and formatting the answer correctly. 
  </p>
@@ -111,9 +111,9 @@ author: kjros
  </p>
 
  <p>
-    For the first pass of translating natural language to SQL, we supplied the data schema in the model's context, 
-    including column names, data types, and descriptions. 
-    Though this performed fairly well, we would occasionally run into formatting errors or depreciated methods in BigQuery SQL syntax. 
+    For the first pass, we supplied the data schema in the model's context, 
+    including column names, data types, and descriptions. We then passed along the user question and asked it to translate into SQL. 
+    Though this performed fairly well, we would occasionally run into formatting errors or depreciated methods with the BigQuery SQL syntax. 
  </p>
 
  <p>
@@ -122,7 +122,7 @@ author: kjros
  </p>
 
  <p>
-    After the SQL query was constructed and executed, we asked the model to format the response in natural language, 
+    After the SQL query was constructed and executed, we asked the model to reformat the response in natural language, 
     and the result would be sent to the app. 
  </p>
 
@@ -152,7 +152,7 @@ author: kjros
  </p>
 
  <p>
-    However, a word of caution. Our use case was pretty simple: translating natural language into SQL back into natural language (and graphs!)
+    However, a word of caution. Our use case was pretty simple: translating natural language into SQL back into natural language (and code!)
     had a limited scope and room for error. There wasn't any major consequence for incorrect results, other than perhaps 
     returning an angry error message in our app, or having an awkward moment when we presented to the AI/ML team. 
  </p>
