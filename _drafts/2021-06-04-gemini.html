@@ -13,12 +13,12 @@ author: kjros
 --- 
 
 <p>
-    In all four years at college, I refused to use ChatGPT to write code or essays, unlike many of my peers. 
+    In all four years at college, I seldom used ChatGPT to write code or essays, unlike my peers. 
     I wanted to build a foundation of knowledge, and prided myself on personal creativity and growth. 
 </p>
 
 <p>
-    Thus, being thrown into a world of generative AI, RAG, and prompt engineering soon into my first job came at quite a shock. 
+    Being thrown into a world of generative AI, RAG, and prompt engineering soon into my first job came at quite a shock. 
 </p>
 
 <h3>Background</h3>
@@ -52,6 +52,13 @@ author: kjros
     Fares didn't vary significantly by time of day, day of the week, or month. 
     Finally, when running simple regression models using scikit-learn, we found shuffling the data at random vs
     ordering by time achieved similar performance. Thus, this was not necessarily a time-series forecasting problem. 
+</p>
+
+<div class= "text-center">
+    <figure>
+        <img src="/assets/images/projects/taxi-fare-split-data.png" alt="two graphs of predicted vs actual fare with similar distributions">
+    </figure>
+</div>
 
 <p>
     Our next step was training and testing. We used <a href="https://cloud.google.com/automl?hl=en" target="_blank">AutoML</a> 
@@ -76,6 +83,13 @@ author: kjros
     model monitoring jobs and version control for when a new model was uploaded. 
  </p>
 
+ <div class= "text-center">
+    <figure>
+        <img src="/assets/images/projects/taxi-feat-importance.png" alt="bar charts of feature importance from two model versions. 
+        highest importances are haversine distance, miles, and seconds">
+    </figure>
+</div>
+
  <p>
     As the primary conductor of all things Kubeflow, and having never dabbled in MLOps before, 
     this served as a good learning experience!
@@ -86,6 +100,8 @@ author: kjros
     framework for quickly building data apps. Enter your source, destination, and time to leave; 
     get back your fare estimation and a fun little map of your route! 
  </p>
+
+ <iframe width="560" height="310" src="/assets/videos/taxi-demo-trip.mp4" frameborder="0" allowfullscreen></iframe>
 
  <p>
     Would not recommend trying to go from Chicago to San Francisco, though. That might rack you a lot of charges. 
@@ -121,6 +137,49 @@ author: kjros
     examples of correct (and incorrect) input/outputs are given. This helped guide our model towards our desired output. 
  </p>
 
+ <pre>
+    <code>
+        examples = [
+        {
+            'input': 'What percentage of rides are to or from the airport?',
+            'query': 'SELECT SUM(CASE WHEN pickup_is_airport = 1 THEN 1 ELSE 0 END) * 100 / COUNT(*) FROM `chicago_taxi_raw_clean.taxi_trips_clean',
+        },
+        {
+            'input': 'What is the most popular payment type?',
+            'query': 'SELECT payment_type, COUNT(*) FROM `chicago_taxi_raw_clean.taxi_trips_clean` GROUP BY payment_type ORDER BY COUNT(*) DESC LIMIT 1',
+        },
+    ]
+
+    prompt = f'''
+    You are a an agent responsible for writing SQL queries over a BigQuery dataset given a natural language user question.
+    The dataset has information about taxi rides taken within the last 15 years, including location, length of trips, and total cost.
+    Below is the table information, schema, and descriptions:
+    Name: "chicago_taxi_raw_clean.taxi_trips_clean"
+    Columns:
+    -- trip_start_timestamp: TIMESTAMP, time the ride started
+    -- trip_miles: FLOAT, total miles the trip took
+    -- payment_type: FLOAT, type of payment used for the ride. This is an encoded column, where: 0 = Credit Card, 1 = Cash, 2 = Mobile
+    -- pickup_latitude: FLOAT, latitude of pickup location
+    -- pickup_longitude: FLOAT, longitude of pickup location
+    -- dropoff_latitude: FLOAT, latitude of dropoff location
+    -- dropoff_longitude: FLOAT, longitude of dropoff location
+    -- pickup_is_airport: INTEGER, representing if the pickup location happened at an airport. This is an encoded column, where 0 = No, 1 = Yes.
+    -- dropoff_is_airport: INTEGER, representing if the dropoff location happened at an airport. This is an encoded column, where 0 - No, 1 = Yes.
+    -- haversine_distance: FLOAT, angular distance between the dropoff and pickup locations.
+    -- trip_seconds: FLOAT, duration of trip in seconds
+    -- fare: FLOAT, total fare cost.
+    The user question is: {query}. Here are some examples of user questions and effective SQL queries: {examples} 
+    The final response should only have single quotes around the query. Do not include any markdown syntax.
+    
+    Return the query only as a string.
+    '''
+
+    response = self.model.generate_content(prompt,
+                                           generation_config=self.generation_config,
+                                           safety_settings=self.safety_settings) 
+    </code>
+</pre>
+
  <p>
     After the SQL query was constructed and executed, we asked the model to reformat the response in natural language, 
     and the result would be sent to the app. 
@@ -131,6 +190,8 @@ author: kjros
     It could tell you the most popular days for rides, return the most expensive fares, and identify trends in the data. 
  </p>
 
+ <iframe width="560" height="310" src="/assets/videos/taxi-chat-demo.mp4" frameborder="0" allowfullscreen></iframe>
+ 
  <p>
     Of course, we wanted to keep the app as intuitive and informative as possible, so we thought it would be fun 
     implementing graphing capabilities as well. We instructed the model to 
