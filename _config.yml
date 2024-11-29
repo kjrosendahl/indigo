@@ -122,4 +122,6 @@ exclude:
     "Gemfile.lock",
     "FAQ.md",
     "vendor",
+    node_modules
+
   ]
